@@ -3,24 +3,82 @@
 {% block title %}Citaj {{ title }}{% endblock %}
 
 {% block body %}
-<h1>{{ title }}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="show-article-container p-3 mt-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img class="show-article-img" src="{{ asset('images/sp-zvezda.jpg') }}">
+                            <div class="show-article-title-container d-inline-block pl-3 align-middle">
+                                <span class="show-article-title ">{{ title }}</span>
+                                <br>
+                                <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
+                                <span class="pl-2 article-details"> 3 hours ago</span>
+                                <span class="pl-2 article-details">
+                                    <span class="js-like-article-count">5</span>
+                                    <a href="{{ path('article_toggle_heart', {slug: slug}) }}" class="fa fa-heart-o like-article js-like-article"></a> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="article-text">
+                                <p>
+                                    Планови за поход на европски трон на Маракани су прављени од средине 80-их година. Звезда је у претходне две деценије остваривала солидне европске резултате састављајући тим од играча из своје Омладинске школе, уз повремено довођење младих талентованих фудбалера из малих клубова, углавном у Србији. Тандем Џајић-Цветковић решио је да крене другим путем, да довођењем најбољих играча на домаћем тржишту створи екипу која би одмах могла да се такмичи на континенталном нивоу, а за неколико сезона и буде кандидат за европске трофеје.
+                                </p>
+                                <p>
+                                    Прилику да годину оконча другим међународним трофејом Звезда је потражила у Токију, где јој је ривал био чилеански Коло Коло, шампион Јужне Америке. На клупи екипе из Сантјага седео је Мирко Јозић, под чијим руководством је Југославија била омладински првак света, а Просинечки најбољи на планети у свом узрасту. Али Роби је, баш као и Стојановић, Маровић, Шабанаџовић и Бинић, напустио екипу одмах по освајању титиуле првака Европе. Прилику да се прослави добио је најмлађи првотимац нашег клуба, Владимир Југовић. Његова два поготка и бриљантна игра на целом терену донели су му награду у виду Тојоте, резервисану за најбољег играча утакмице. Трећи гол у великој победи 3:0 дао је Дарко Панчев, а Звезда је од финиша првог дела играла са играчем мање због искључења Савићевића.
+                                    Осмог децембра 1991. године Звезда је остварила све што један фудбалски клуб може да оствари: била је шампион Европе и света. Са ове дистанце, мало је вероватно да ће иједан клуб са истока Европе то остварити у будућности. Опет, то није деловало вероватно ни десет година пре Барија. Прича о славној години овде није завршена.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="share-icons mb-5"><span class="pr-1">Share:</span> <i class="pr-1 fa fa-facebook-square"></i><i class="pr-1 fa fa-twitter-square"></i><i class="pr-1 fa fa-reddit-square"></i><i class="pr-1 fa fa-share-alt-square"></i></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3><i class="pr-3 fa fa-comment"></i>{{ comments|length }} Comments</h3>
+                            <hr>
 
-<div>
-    <p>
-        Планови за поход на европски трон на Маракани су прављени од средине 80-их година. Звезда је у претходне две деценије остваривала солидне европске резултате састављајући тим од играча из своје Омладинске школе, уз повремено довођење младих талентованих фудбалера из малих клубова, углавном у Србији. Тандем Џајић-Цветковић решио је да крене другим путем, да довођењем најбољих играча на домаћем тржишту створи екипу која би одмах могла да се такмичи на континенталном нивоу, а за неколико сезона и буде кандидат за европске трофеје.
-    </p>
-    <p>
-        Прилику да годину оконча другим међународним трофејом Звезда је потражила у Токију, где јој је ривал био чилеански Коло Коло, шампион Јужне Америке. На клупи екипе из Сантјага седео је Мирко Јозић, под чијим руководством је Југославија била омладински првак света, а Просинечки најбољи на планети у свом узрасту. Али Роби је, баш као и Стојановић, Маровић, Шабанаџовић и Бинић, напустио екипу одмах по освајању титиуле првака Европе. Прилику да се прослави добио је најмлађи првотимац нашег клуба, Владимир Југовић. Његова два поготка и бриљантна игра на целом терену донели су му награду у виду Тојоте, резервисану за најбољег играча утакмице. Трећи гол у великој победи 3:0 дао је Дарко Панчев, а Звезда је од финиша првог дела играла са играчем мање због искључења Савићевића.
-        Осмог децембра 1991. године Звезда је остварила све што један фудбалски клуб може да оствари: била је шампион Европе и света. Са ове дистанце, мало је вероватно да ће иједан клуб са истока Европе то остварити у будућности. Опет, то није деловало вероватно ни десет година пре Барија. Прича о славној години овде није завршена.
-    </p>
-</div>
+                            <div class="row mb-5">
+                                <div class="col-sm-12">
+                                    <img class="comment-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}">
+                                    <div class="comment-container d-inline-block pl-3 align-top">
+                                        <span class="commenter-name">Amy Oort</span>
+                                        <div class="form-group">
+                                            <textarea class="form-control comment-form" id="articleText" rows="1"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for comment in comments %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img class="comment-img rounded-circle" src="{{ asset('images/alien-profile.png') }}">
+                                    <div class="comment-container d-inline-block pl-3 align-top">
+                                        <span class="commenter-name">Zvezdan Terzic</span>
+                                        <br>
+                                        <span class="comment"> {{ comment }}</span>
+                                        <p><a href="#">Reply</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-<h2>Comments ({{ comments|length }})</h2>
+{% block javascripts %}
+    {{ parent() }}
 
-<ul>
-    {% for comment in comments %}
-        <li>{{ comment }}</li>
-    {% endfor %}
-</ul>
-
+    <script src="{{ asset('js/article_show.js') }}"></script>
 {% endblock %}
